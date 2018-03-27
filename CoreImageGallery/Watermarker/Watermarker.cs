@@ -45,7 +45,7 @@ namespace Watermarker
         }
 
         [FunctionName("Watermarker")]
-        public static void Run([BlobTrigger("images/{name}"/*, Connection = "UseDevelopmentStorage=true"*/)]Stream inputBlob,
+        public static void Run([BlobTrigger("images/{name}")]Stream inputBlob,
                                [Blob("images-watermarked/{name}", FileAccess.Write)]Stream outputBlob, 
                                string name, TraceWriter log)
         {

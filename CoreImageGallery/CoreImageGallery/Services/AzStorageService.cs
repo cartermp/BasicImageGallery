@@ -27,7 +27,7 @@ namespace CoreImageGallery.Services
 
         public AzStorageService(IConfiguration config)
         {
-            _connectionString = config.GetConnectionString("AzureStorageConnectionString");
+            _connectionString = config["AzureStorageConnectionString"];
             _account = CloudStorageAccount.Parse(_connectionString);
             _client = _account.CreateCloudBlobClient();
             _uploadContainer = _client.GetContainerReference(_uploadContainerName);
